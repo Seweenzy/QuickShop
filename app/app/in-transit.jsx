@@ -6,9 +6,7 @@ import QsafeView from "../components/safeView";
 const InTransit = () => {
   return (
     <QsafeView>
-      <Dashboard />
-
-      <Text>Hello Intransit</Text>
+      <Dashboard hello seun />
     </QsafeView>
   );
 };
