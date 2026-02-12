@@ -1,5 +1,5 @@
 {
-  "name": "products",
+  "name": "quickshop",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
