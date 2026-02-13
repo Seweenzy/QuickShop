@@ -8,7 +8,7 @@ const QsafeView = ({ children, bgColor }) => {
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView
         style={{
-          paddingHorizontal: width * 0.05,
+          paddingHorizontal: width * 0.02,
           flex: 1,
           backgroundColor: bgColor ? bgColor : "#F5F5F5",
         }}
