@@ -1,7 +1,7 @@
-import QsafeView from "../components/safeView";
+import QsafeView from "./safeView";
 import { Image, StyleSheet, View, Text, Pressable } from "react-native";
 
-const Dashboard = ({
+const Incoming_comp = ({
   image,
   iconimage,
   badges,
@@ -19,26 +19,35 @@ const Dashboard = ({
   in_coms,
   location,
   address,
+  press_1,
+  press_2,
+  router,
+  onPress1,
+  onPress2,
 }) => {
   return (
     <QsafeView>
-      <View>
-        {image && <Image source={image} style={styles.image} />}
+      {View && (
+        <View>
+          {image && <Image source={image} style={styles.image} />}
 
-        <View style={{ flexDirection: "row", gap: 5, marginTop: 10 }}>
-          <View>
-            {iconimage && <Image source={iconimage} style={styles.icon} />}
-          </View>
+          <View style={{ flexDirection: "row", gap: 5, marginTop: 10 }}>
+            <View>
+              {iconimage && <Image source={iconimage} style={styles.icon} />}
+            </View>
 
-          <View>
-            {location && (
-              <Text style={{ fontFamily: "regular" }}>{location}</Text>
-            )}
+            <View>
+              {location && (
+                <Text style={{ fontFamily: "regular" }}>{location}</Text>
+              )}
 
-            {address && <Text style={{ fontFamily: "medium" }}>{address}</Text>}
+              {address && (
+                <Text style={{ fontFamily: "medium" }}>{address}</Text>
+              )}
+            </View>
           </View>
         </View>
-      </View>
+      )}
 
       <View
         style={{
@@ -50,7 +59,7 @@ const Dashboard = ({
         }}
       >
         {in_trans && (
-          <Text style={{ fontFamily: "bold", color: "#004EA3", fontSize: 16 }}>
+          <Text style={{ fontFamily: "light", color: "#7A8189", fontSize: 16 }}>
             {in_trans}
           </Text>
         )}
@@ -58,7 +67,7 @@ const Dashboard = ({
         <View style={{ flexDirection: "row" }}>
           {in_coms && (
             <Text
-              style={{ fontFamily: "light", color: "#7A8189", fontSize: 16 }}
+              style={{ fontFamily: "bold", color: "#004EA3", fontSize: 16 }}
             >
               {in_coms}
             </Text>
@@ -150,36 +159,43 @@ const Dashboard = ({
           </View>
         </View>
 
-        <View style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
+        <View style={{ flexDirection: "row", gap: 5 }}>
           <Pressable
             style={{
               backgroundColor: "#FFC107",
-              padding: 12,
+
+              padding: 10,
               borderRadius: 8,
               marginTop: 30,
+              height: 45,
+              width: 175,
             }}
-            onPress={() => console.log("Get Started pressed")}
+            onPress={onPress1}
           >
             <Text
               style={{
                 color: "#000000",
-                fontSize: 18,
+                fontSize: 17,
                 fontFamily: "medium",
                 textAlign: "center",
                 alignContent: "center",
               }}
             >
-              UNSUCCESSFUL
+              {press_1}
             </Text>
           </Pressable>
+
           <Pressable
             style={{
               backgroundColor: "#004EA3",
               padding: 10,
               borderRadius: 8,
               marginTop: 30,
+              height: 45,
+              width: 175,
+              alignContent: "center",
             }}
-            onPress={() => console.log("Get Started pressed")}
+            onPress={onPress2}
           >
             <Text
               style={{
@@ -190,7 +206,7 @@ const Dashboard = ({
                 alignContent: "center",
               }}
             >
-              DELIVERED
+              {press_2}
             </Text>
           </Pressable>
         </View>
@@ -199,7 +215,7 @@ const Dashboard = ({
   );
 };
 
-export default Dashboard;
+export default Incoming_comp;
 
 const styles = StyleSheet.create({
   image: {

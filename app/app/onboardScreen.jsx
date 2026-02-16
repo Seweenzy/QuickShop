@@ -1,5 +1,6 @@
 import QsafeView from "../components/safeView";
 import { Text, View, Image, Pressable } from "react-native";
+import { router } from "expo-router";
 
 const OnboardScreen = () => {
   return (
@@ -60,7 +61,9 @@ const OnboardScreen = () => {
           borderRadius: 8,
           marginTop: 70,
         }}
-        onPress={() => console.log("Get Started pressed")}
+        onPress={() => {
+          router.push("./dashboard");
+        }}
       >
         <Text
           style={{

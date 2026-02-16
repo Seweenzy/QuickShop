@@ -17,10 +17,12 @@ const RootLayout = () => {
       screenOptions={{
         headerShown: false,
       }}
-      InitialRouteName="in-transit"
+      InitialRouteName="onboardScreen"
     >
-      <Stack.Screen name="in-transit" />
       <Stack.Screen name="onboardScreen" />
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="(dashboard)" />
+      <Stack.Screen name="in-transit" />
       <Stack.Screen name="index" />
     </Stack>
   );
