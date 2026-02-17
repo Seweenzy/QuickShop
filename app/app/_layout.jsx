@@ -22,6 +22,7 @@ const RootLayout = () => {
       <Stack.Screen name="onboardScreen" />
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="(dashboard)" />
+      <Stack.Screen name="(deliveries)" />
       <Stack.Screen name="in-transit" />
       <Stack.Screen name="index" />
     </Stack>

@@ -1,0 +1,15 @@
+import QsafeView from "../../components/safeView";
+import { Stack } from "expo-router";
+
+const DeliveriesLayout = () => {
+  return (
+    <QsafeView>
+      <Stack>
+        <Stack.Screen name="deliveries_intransit" />
+        <Stack.Screen name="deliveries_pending" />
+      </Stack>
+    </QsafeView>
+  );
+};
+
+export default DeliveriesLayout;
