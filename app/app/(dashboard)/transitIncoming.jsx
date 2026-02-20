@@ -28,6 +28,7 @@ const TransitIncoming = () => {
           onPress1={() => {
             router.push("../incomingDeclined");
           }}
+          statusimg={require("../../assets/images/Statuscard2.png")}
         />
 
         <View style={{ marginTop: 20 }}></View>
@@ -44,13 +45,12 @@ const TransitIncoming = () => {
           stat_time={" 04:18PM"}
           press_1={"DECLINE"}
           press_2={"ACCEPT"}
+          statusimg={require("../../assets/images/Statuscard2.png")}
         />
 
         <View style={{ marginTop: 20 }}></View>
 
         <Incoming_comp
-          image={require("../../assets/images/QsLogo.png")}
-          iconimage={require("../../assets/images/qs-icon.png")}
           card={require("../../assets/images/delivery-card.png")}
           shipnumber="AB1234XY78"
           priceImg={require("../../assets/images/fee_1.png")}
@@ -62,10 +62,9 @@ const TransitIncoming = () => {
           stat_time={" 04:18PM"}
           in_trans={"In-Transit"}
           in_coms={"In-Coming"}
-          location={"Location"}
-          address={"Agton Streets,Corner De Guzman St,Toril"}
           press_1={"DECLINE"}
           press_2={"ACCEPT"}
+          statusimg={require("../../assets/images/Statuscard2.png")}
         />
       </ScrollView>
     </QsafeView>

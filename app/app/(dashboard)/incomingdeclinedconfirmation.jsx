@@ -42,6 +42,7 @@ const IncomingDeclinedConfirmation = () => {
           onPress2={() => {
             router.push("/incomingaccept");
           }}
+          statusimg={require("../../assets/images/Statuscard2.png")}
         />
 
         <View style={{ marginTop: 20 }}></View>
@@ -65,13 +66,12 @@ const IncomingDeclinedConfirmation = () => {
               [{ text: "OK", onPress: () => console.log("YES Pressed") }],
             );
           }}
+          statusimg={require("../../assets/images/Statuscard2.png")}
         />
 
         <View style={{ marginTop: 20 }}></View>
 
         <Incoming_comp
-          image={require("../../assets/images/QsLogo.png")}
-          iconimage={require("../../assets/images/qs-icon.png")}
           card={require("../../assets/images/delivery-card.png")}
           shipnumber="AB1234XY78"
           priceImg={require("../../assets/images/fee_1.png")}
@@ -81,10 +81,6 @@ const IncomingDeclinedConfirmation = () => {
           recname={"Paul Cortez"}
           stat_date={"12/02/2026"}
           stat_time={" 04:18PM"}
-          in_trans={"In-Transit"}
-          in_coms={"In-Coming"}
-          location={"Location"}
-          address={"Agton Streets,Corner De Guzman St,Toril"}
           press_1={"DECLINE"}
           press_2={"ACCEPT"}
           onPress1={() => {
@@ -94,6 +90,7 @@ const IncomingDeclinedConfirmation = () => {
               [{ text: "OK", onPress: () => console.log("YES Pressed") }],
             );
           }}
+          statusimg={require("../../assets/images/Statuscard2.png")}
         />
       </ScrollView>
     </QsafeView>

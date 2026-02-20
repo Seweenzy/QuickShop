@@ -24,6 +24,7 @@ const Incoming_comp = ({
   router,
   onPress1,
   onPress2,
+  statusimg,
 }) => {
   return (
     <QsafeView>
@@ -76,7 +77,6 @@ const Incoming_comp = ({
       </View>
       <View
         style={{
-          height: 500,
           borderRadius: 10,
           borderColor: "#ccc",
           borderWidth: 0.9,
@@ -142,20 +142,8 @@ const Incoming_comp = ({
         <View style={{ marginTop: 30 }}>
           <Text style={{ fontFamily: "normal", color: "grey" }}>Status</Text>
 
-          <View
-            style={{
-              height: 180,
-              backgroundColor: "#F2F2F2",
-              borderRadius: 8,
-              padding: 20,
-            }}
-          >
-            <View>
-              <Text style={{ color: "#727272" }}>{stat_date}</Text>
-              <Text style={{ color: "#727272" }}>{stat_time}</Text>
-            </View>
-
-            <View></View>
+          <View>
+            <Image source={statusimg} style={{ width: 355, height: 80 }} />
           </View>
         </View>
 

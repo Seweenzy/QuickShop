@@ -1,20 +1,21 @@
-import { View, Text, Image, Pressable } from "react-native";
 import QsafeView from "./safeView";
+import { Image, View, Text, Pressable } from "react-native";
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const DeliveriesComp = ({
+const ReportsComp = ({
   shipnum,
   press1,
-  city,
   state,
-  recname_text,
+  city,
   rec_name,
-  recnum_text,
+  recname_text,
   rec_num,
+  recnum_text,
   fee,
   price,
-  buttonpress,
   delivonpress,
+  buttonpress,
 }) => {
   return (
     <QsafeView>
@@ -54,10 +55,10 @@ const DeliveriesComp = ({
                     height: 45,
                     width: 125,
                   },
-                  press1 === "Pending"
-                    ? { backgroundColor: "#FAF2EC" }
-                    : press1 === "In-Transit"
-                      ? { backgroundColor: "#FFF9E6" }
+                  press1 === "Delivered"
+                    ? { backgroundColor: "#E7F0EB" }
+                    : press1 === "Cancelled"
+                      ? { backgroundColor: "#F0E7E7" }
                       : { backgroundColor: "" }, // default
                 ]}
               >
@@ -68,10 +69,10 @@ const DeliveriesComp = ({
                       fontFamily: "bold",
                       textAlign: "center",
                     },
-                    press1 === "Pending"
-                      ? { color: "#C26420" }
-                      : press1 === "In-Transit"
-                        ? { color: "#66500E" }
+                    press1 === "Delivered"
+                      ? { color: "#116638" }
+                      : press1 === "Cancelled"
+                        ? { color: "#650F10" }
                         : { color: "#fff" }, // default
                   ]}
                 >
@@ -176,4 +177,4 @@ const DeliveriesComp = ({
   );
 };
 
-export default DeliveriesComp;
+export default ReportsComp;

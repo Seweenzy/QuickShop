@@ -1,6 +1,7 @@
 import DeliveriesComp from "../../components/deliveries_comp";
 import QsafeView from "../../components/safeView";
 import { View, Image, Text, ScrollView } from "react-native";
+import { router } from "expo-router";
 
 const Deliveries = () => {
   return (
@@ -30,6 +31,9 @@ const Deliveries = () => {
             fee={"Delivery Fee"}
             price={"₱543.00"}
             buttonpress={"VIEW DETAILS"}
+            delivonpress={() => {
+              router.push("/deliveries_pending");
+            }}
           />
           <DeliveriesComp
             shipnum={"ST7890QR12"}
@@ -43,6 +47,9 @@ const Deliveries = () => {
             fee={"Delivery Fee"}
             price={"₱543.00"}
             buttonpress={"VIEW DETAILS"}
+            delivonpress={() => {
+              router.push("/deliveries_intransit");
+            }}
           />
           <DeliveriesComp
             shipnum={"ST7890QR12"}
@@ -56,6 +63,9 @@ const Deliveries = () => {
             fee={"Delivery Fee"}
             price={"₱543.00"}
             buttonpress={"VIEW DETAILS"}
+            delivonpress={() => {
+              router.push("/deliveries_intransit");
+            }}
           />
         </View>
       </ScrollView>
