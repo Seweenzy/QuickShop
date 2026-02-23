@@ -20,8 +20,10 @@ const RootLayout = () => {
       InitialRouteName="onboardScreen"
     >
       <Stack.Screen name="onboardScreen" />
+      <Stack.Screen name="(reports)" />
       <Stack.Screen name="(deliveries)" />
       <Stack.Screen name="(tabs)" />
+
       <Stack.Screen name="(dashboard)" />
       <Stack.Screen name="in-transit" />
       <Stack.Screen name="index" />

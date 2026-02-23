@@ -8,14 +8,14 @@ const ReportsComp = ({
   press1,
   state,
   city,
-  rec_name,
-  recname_text,
-  rec_num,
-  recnum_text,
   fee,
   price,
   delivonpress,
   buttonpress,
+  departure_time,
+  arrival_time,
+  depart_name,
+  arrival_name,
 }) => {
   return (
     <QsafeView>
@@ -113,25 +113,19 @@ const ReportsComp = ({
         >
           <View style={{ gap: 5 }}>
             <Text style={{ fontFamily: "medium", fontSize: 14 }}>
-              {recname_text}
+              {depart_name}
             </Text>
             <Text style={{ fontFamily: "medium", fontSize: 14 }}>
-              {rec_name}
+              {departure_time}
             </Text>
           </View>
 
           <View style={{ gap: 5 }}>
             <Text style={{ fontFamily: "medium", fontSize: 14 }}>
-              {recnum_text}
+              {arrival_name}
             </Text>
-            <Text
-              style={{
-                fontFamily: "medium",
-                fontSize: 14,
-                paddingLeft: 40,
-              }}
-            >
-              {rec_num}
+            <Text style={{ fontFamily: "medium", fontSize: 14 }}>
+              {arrival_time}
             </Text>
           </View>
         </View>
