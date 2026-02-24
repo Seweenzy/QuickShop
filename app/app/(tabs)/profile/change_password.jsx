@@ -48,6 +48,8 @@ const ChangePassword = () => {
                 flex: 1,
                 padding: 10,
                 marginLeft: 10,
+                fontSize: 16,
+                fontWeight: "bold",
               }}
             />
             <AntDesign name="eye-invisible" size={18} color="black" />
@@ -78,7 +80,8 @@ const ChangePassword = () => {
               flex: 1,
               padding: 10,
               color: "black",
-              fontWeight: "500",
+              fontWeight: "bold",
+              fontSize: 16,
             }}
           />
           <AntDesign name="eye-invisible" size={18} color="black" />
