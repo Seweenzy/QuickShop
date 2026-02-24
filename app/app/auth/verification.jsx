@@ -76,7 +76,7 @@ const Verification = () => {
           marginTop: 70,
         }}
         onPress={() => {
-          router.push("");
+          router.push("../onboardScreen");
         }}
       >
         <Text
