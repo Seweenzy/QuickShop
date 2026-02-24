@@ -11,6 +11,7 @@ const ProfileLayout = () => {
       <Stack.Screen name="change_email" />
       <Stack.Screen name="change_phone" />
       <Stack.Screen name="change_password" />
+      <Stack.Screen name="changepass_confirm" />
     </Stack>
   );
 };

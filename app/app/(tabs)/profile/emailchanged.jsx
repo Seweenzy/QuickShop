@@ -1,10 +1,9 @@
 import QsafeView from "../../../components/safeView";
-import { View, Text, Pressable, TextInput, Image } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import Feather from "@expo/vector-icons/Feather";
+import { Text, Image, View, TextInput, Pressable, Alert } from "react-native";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { router } from "expo-router";
 
-const ChangePhone = () => {
+const EmailChanged = () => {
   return (
     <QsafeView>
       <Image
@@ -20,15 +19,13 @@ const ChangePhone = () => {
           marginHorizontal: 20,
         }}
       >
-        <Text style={{ fontFamily: "bold", fontSize: 18 }}>
-          {" "}
-          Change Phone Number
-        </Text>
+        <Text style={{ fontFamily: "bold", fontSize: 18 }}> Email Address</Text>
         <Text style={{ color: "#7E7E7E", fontFamily: "normal", marginTop: 5 }}>
-          You can change your phone number here to keep your account secure.
+          You can change your email address here to ensure you receive all
+          important notifications.
         </Text>
         <View style={{ marginTop: 20 }}>
-          <Text>New Phone Number</Text>
+          <Text>Current Email Address</Text>
 
           <View
             style={{
@@ -41,24 +38,20 @@ const ChangePhone = () => {
               marginTop: 10,
             }}
           >
-            <Feather name="phone" size={24} color="#004EA3" />
+            <FontAwesome name="envelope-o" size={24} color="black" />
             <TextInput
-              placeholder="Enter new phone number"
-              secureTextEntry={true}
+              placeholder="geloval@gmail.com"
               style={{
                 flex: 1,
                 padding: 10,
                 marginLeft: 10,
-                fontSize: 16,
-                fontWeight: "bold",
               }}
             />
-            <AntDesign name="eye-invisible" size={18} color="black" />
           </View>
         </View>
 
         <View style={{ marginTop: 20 }}>
-          <Text>Confirm New Password:</Text>
+          <Text>New Email Address:</Text>
         </View>
 
         <View
@@ -73,25 +66,33 @@ const ChangePhone = () => {
             gap: 10,
           }}
         >
-          <Feather name="lock" size={24} color="#004EA3" />
+          <FontAwesome name="envelope-o" size={24} color="black" />
           <TextInput
-            placeholder="Confirm new password"
-            secureTextEntry={true}
+            placeholder="koluwaseunemmanuel@gmail.com"
             style={{
               flex: 1,
               padding: 10,
               color: "black",
-              fontWeight: "bold",
-              fontSize: 16,
+              fontWeight: "500",
             }}
           />
-          <AntDesign name="eye-invisible" size={18} color="black" />
         </View>
       </View>
 
       <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 20 }}>
         <Pressable
-          onPress={() => router.push("/(tabs)/profile/phonechanged")}
+          onPress={() => {
+            Alert.alert(
+              "Email Changed",
+              "Your email address has been successfully updated.",
+              [
+                {
+                  text: "OK",
+                  onPress: () => router.push("/(tabs)/profile"),
+                },
+              ],
+            );
+          }}
           style={{
             backgroundColor: "#004ea3",
             padding: 10,
@@ -111,4 +112,4 @@ const ChangePhone = () => {
   );
 };
 
-export default ChangePhone;
+export default EmailChanged;

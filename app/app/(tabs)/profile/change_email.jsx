@@ -1,6 +1,7 @@
 import QsafeView from "../../../components/safeView";
 import { Text, Image, View, TextInput, Pressable } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { router } from "expo-router";
 
 const ChangeEmail = () => {
   return (
@@ -80,6 +81,9 @@ const ChangeEmail = () => {
 
       <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 20 }}>
         <Pressable
+          onPress={() => {
+            router.push("/(tabs)/profile/emailchanged");
+          }}
           style={{
             backgroundColor: "#004ea3",
             padding: 10,

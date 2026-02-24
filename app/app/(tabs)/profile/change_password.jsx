@@ -2,6 +2,7 @@ import QsafeView from "../../../components/safeView";
 import { View, Text, Pressable, TextInput, Image } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { router } from "expo-router";
 
 const ChangePassword = () => {
   return (
@@ -90,6 +91,9 @@ const ChangePassword = () => {
 
       <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 20 }}>
         <Pressable
+          onPress={() => {
+            router.push("/(tabs)/profile/passwordchanged");
+          }}
           style={{
             backgroundColor: "#004ea3",
             padding: 10,

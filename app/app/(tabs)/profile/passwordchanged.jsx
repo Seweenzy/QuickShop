@@ -1,10 +1,10 @@
 import QsafeView from "../../../components/safeView";
-import { View, Text, Pressable, TextInput, Image } from "react-native";
+import { View, Text, Pressable, TextInput, Image, Alert } from "react-native";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import Feather from "@expo/vector-icons/Feather";
 import { router } from "expo-router";
 
-const ChangePhone = () => {
+const PasswordChanged = () => {
   return (
     <QsafeView>
       <Image
@@ -22,13 +22,13 @@ const ChangePhone = () => {
       >
         <Text style={{ fontFamily: "bold", fontSize: 18 }}>
           {" "}
-          Change Phone Number
+          Change Password
         </Text>
         <Text style={{ color: "#7E7E7E", fontFamily: "normal", marginTop: 5 }}>
-          You can change your phone number here to keep your account secure.
+          You can change your password here to keep your account secure.
         </Text>
         <View style={{ marginTop: 20 }}>
-          <Text>New Phone Number</Text>
+          <Text>New Password</Text>
 
           <View
             style={{
@@ -41,9 +41,9 @@ const ChangePhone = () => {
               marginTop: 10,
             }}
           >
-            <Feather name="phone" size={24} color="#004EA3" />
+            <FontAwesome name="lock" size={18} color="black" />
             <TextInput
-              placeholder="Enter new phone number"
+              placeholder="Enter new password"
               secureTextEntry={true}
               style={{
                 flex: 1,
@@ -73,7 +73,7 @@ const ChangePhone = () => {
             gap: 10,
           }}
         >
-          <Feather name="lock" size={24} color="#004EA3" />
+          <FontAwesome name="lock" size={18} color="black" />
           <TextInput
             placeholder="Confirm new password"
             secureTextEntry={true}
@@ -91,7 +91,18 @@ const ChangePhone = () => {
 
       <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 20 }}>
         <Pressable
-          onPress={() => router.push("/(tabs)/profile/phonechanged")}
+          onPress={() =>
+            Alert.alert(
+              "Password Changed",
+              "Your password has been successfully updated.",
+              [
+                {
+                  text: "OK",
+                  onPress: () => router.push("/(tabs)/profile"),
+                },
+              ],
+            )
+          }
           style={{
             backgroundColor: "#004ea3",
             padding: 10,
@@ -111,4 +122,4 @@ const ChangePhone = () => {
   );
 };
 
-export default ChangePhone;
+export default PasswordChanged;

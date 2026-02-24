@@ -1,7 +1,7 @@
 import { Image, View } from "react-native";
 import QsafeView from "../components/safeView";
 
-const Index = () => {
+const Login = () => {
   return (
     <QsafeView>
       <View
@@ -33,4 +33,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Login;

@@ -1,10 +1,10 @@
 import QsafeView from "../../../components/safeView";
-import { View, Text, Pressable, TextInput, Image } from "react-native";
+import { View, Text, Pressable, TextInput, Image, Alert } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
 import { router } from "expo-router";
 
-const ChangePhone = () => {
+const PhoneChanged = () => {
   return (
     <QsafeView>
       <Image
@@ -91,7 +91,18 @@ const ChangePhone = () => {
 
       <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 20 }}>
         <Pressable
-          onPress={() => router.push("/(tabs)/profile/phonechanged")}
+          onPress={() =>
+            Alert.alert(
+              "Phone Number Changed",
+              "Your phone number has been successfully updated.",
+              [
+                {
+                  text: "OK",
+                  onPress: () => router.push("/(tabs)/profile"),
+                },
+              ],
+            )
+          }
           style={{
             backgroundColor: "#004ea3",
             padding: 10,
@@ -111,4 +122,4 @@ const ChangePhone = () => {
   );
 };
 
-export default ChangePhone;
+export default PhoneChanged;
