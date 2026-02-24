@@ -9,8 +9,9 @@ const AuthLayout = () => {
       initialRouteName="login"
     >
       <Stack.Screen name="login" />
-      <Stack.Screen name="registration" />
+      <Stack.Screen name="register" />
       <Stack.Screen name="forgotpassword" />
+      <Stack.Screen name="passwordconfirmation" />
     </Stack>
   );
 };
