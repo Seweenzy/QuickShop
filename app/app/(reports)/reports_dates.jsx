@@ -51,7 +51,7 @@ const ReportDates = () => {
         />
       </View>
 
-      <View style={{ top: 80, bottom: 0 }}>
+      <View style={{ top: 100, bottom: 0 }}>
         <Pressable
           onPress={() => {
             router.push("../reports_table");
@@ -60,6 +60,7 @@ const ReportDates = () => {
             alignContent: "center",
             backgroundColor: "#004EA3",
             borderRadius: 10,
+            height: 40,
           }}
         >
           <Text
@@ -67,8 +68,8 @@ const ReportDates = () => {
               textAlign: "center",
               color: "white",
               fontSize: 14,
-              padding: 20,
-              fontFamily: "bold",
+              padding: 10,
+              fontFamily: "medium",
             }}
           >
             CONFIRM DATES

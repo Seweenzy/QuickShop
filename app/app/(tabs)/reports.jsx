@@ -81,20 +81,109 @@ const Reports = () => {
         </Pressable>
       </View>
 
-      <ScrollView horizontal>
+      <ScrollView height={80} horizontal showsHorizontalScrollIndicator={false}>
         <View
           style={{
             flexDirection: "row",
-            height: 40,
+
             marginTop: 20,
           }}
         >
-          <Text style={{ paddingHorizontal: 20 }}>ALL</Text>
-          <Text style={{ paddingHorizontal: 20 }}>DELIVERED</Text>
-          <Text style={{ paddingHorizontal: 20 }}>UNSUCCESSFUL</Text>
-          <Text style={{ paddingHorizontal: 20 }}>CANCELLED</Text>
-          <Text style={{ paddingHorizontal: 20 }}>UNSUCCESSFUL</Text>
-          <Text style={{ paddingHorizontal: 20 }}>CANCELLED</Text>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              ALL
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              DELIVERED
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              UNSUCCESSFUL
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              CANCELLED
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              IN-TRANSIT
+            </Text>
+          </Pressable>
         </View>
       </ScrollView>
 

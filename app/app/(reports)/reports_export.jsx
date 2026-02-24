@@ -9,11 +9,13 @@ import {
 } from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import { router } from "expo-router";
+import Fontisto from "@expo/vector-icons/Fontisto";
+import Foundation from "@expo/vector-icons/Foundation";
 
 const ReportsExport = () => {
   const { width } = Dimensions.get("screen");
   return (
-    <QsafeView>
+    <QsafeView bgColor="#D3D4D5">
       <View style={{ flexDirection: "row", gap: 90 }}>
         <Pressable
           onPress={() => {
@@ -33,7 +35,7 @@ const ReportsExport = () => {
 
       <View
         style={{
-          backgroundColor: "white",
+          backgroundColor: "#D3D4D5",
 
           marginTop: 30,
           borderRadius: 10,
@@ -52,6 +54,112 @@ const ReportsExport = () => {
         />
       </View>
 
+      <ScrollView height={80} horizontal showsHorizontalScrollIndicator={false}>
+        <View
+          style={{
+            flexDirection: "row",
+
+            marginTop: 20,
+          }}
+        >
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              ALL
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              DELIVERED
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              UNSUCCESSFUL
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              CANCELLED
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                fontFamily: "bold",
+              })}
+            >
+              IN-TRANSIT
+            </Text>
+          </Pressable>
+        </View>
+      </ScrollView>
+
       <View style={{ marginTop: 20 }}>
         <Text>Reports from July 6, 2024 - July 14, 2024</Text>
       </View>
@@ -66,26 +174,53 @@ const ReportsExport = () => {
         </View>
       </ScrollView>
 
-      <View style={{ top: 15, bottom: 0 }}>
-        <Pressable
+      <View
+        style={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          left: 0,
+          top: "90%",
+          padding: 20,
+          backgroundColor: "white",
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          marginVertical: 5,
+        }}
+      >
+        <View
           style={{
-            alignContent: "center",
-            backgroundColor: "#004EA3",
-            borderRadius: 10,
+            flexDirection: "row",
+            gap: 10,
+            borderBottomWidth: 1,
+            borderBottomColor: "#e0e0e0",
+            paddingBottom: 10,
           }}
         >
+          <Fontisto name="email" size={24} color="black" />
           <Text
             style={{
-              textAlign: "center",
-              color: "white",
-              fontSize: 16,
-              padding: 20,
-              fontFamily: "bold",
+              fontSize: 18,
+              fontWeight: "medium",
             }}
           >
-            EXPORT REPORTS
+            Export to Email
           </Text>
-        </Pressable>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            gap: 20,
+
+            paddingVertical: 10,
+          }}
+        >
+          <Foundation name="page-csv" size={26} color="black" />
+          <Text style={{ fontSize: 18, fontWeight: "medium" }}>
+            Export as CSV
+          </Text>
+        </View>
       </View>
     </QsafeView>
   );

@@ -28,33 +28,29 @@ const Dash_comp = ({
 }) => {
   return (
     <QsafeView>
-      {View && (
-        <View>
-          {image && <Image source={image} style={styles.image} />}
+      <View>
+        {image && <Image source={image} style={styles.image} />}
 
-          <View style={{ flexDirection: "row", gap: 5, marginTop: 10 }}>
-            <View>
-              {iconimage && <Image source={iconimage} style={styles.icon} />}
-            </View>
+        <View style={{ flexDirection: "row", gap: 5, marginTop: 0 }}>
+          <View>
+            {iconimage && <Image source={iconimage} style={styles.icon} />}
+          </View>
 
-            <View>
-              {location && (
-                <Text style={{ fontFamily: "regular" }}>{location}</Text>
-              )}
+          <View>
+            {location && (
+              <Text style={{ fontFamily: "regular" }}>{location}</Text>
+            )}
 
-              {address && (
-                <Text style={{ fontFamily: "medium" }}>{address}</Text>
-              )}
-            </View>
+            {address && <Text style={{ fontFamily: "medium" }}>{address}</Text>}
           </View>
         </View>
-      )}
+      </View>
 
       <View
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
-          marginTop: 20,
+          marginTop: 10,
           marginLeft: 10,
           marginRight: 10,
         }}
@@ -81,7 +77,7 @@ const Dash_comp = ({
           borderRadius: 10,
           borderColor: "#ccc",
           borderWidth: 0.9,
-          marginTop: 10,
+          marginTop: 0,
           backgroundColor: "white",
           padding: 10,
         }}

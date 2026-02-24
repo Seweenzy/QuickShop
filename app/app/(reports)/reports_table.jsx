@@ -52,6 +52,145 @@ const ReportTables = () => {
         />
       </View>
 
+      <ScrollView horizontal height={80} showsHorizontalScrollIndicator={false}>
+        <View
+          style={{
+            flexDirection: "row",
+
+            marginTop: 20,
+          }}
+        >
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              paddingVertical: 10,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            {({ pressed }) => (
+              <Text
+                style={{
+                  textAlign: "center",
+                  color: pressed ? "white" : "black",
+                  paddingHorizontal: 20,
+                  fontFamily: "bold",
+                }}
+              >
+                ALL
+              </Text>
+            )}
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              paddingHorizontal: 20,
+              paddingVertical: 10,
+              borderRadius: pressed ? 10 : 0,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                paddingHorizontal: 20,
+                fontFamily: "bold",
+              })}
+            >
+              DELIVERED
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              borderRadius: pressed ? 10 : 0,
+              paddingHorizontal: 10,
+              paddingVertical: 10,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                paddingHorizontal: 20,
+                fontFamily: "bold",
+              })}
+            >
+              UNSUCCESSFUL
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              borderRadius: pressed ? 10 : 0,
+              paddingHorizontal: 10,
+              paddingVertical: 10,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                paddingHorizontal: 20,
+                fontFamily: "bold",
+              })}
+            >
+              CANCELLED
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              borderRadius: pressed ? 10 : 0,
+              paddingHorizontal: 10,
+              paddingVertical: 10,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                paddingHorizontal: 20,
+                fontFamily: "bold",
+              })}
+            >
+              PENDING
+            </Text>
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? "#FFC107" : "transparent",
+              borderRadius: pressed ? 10 : 0,
+              paddingHorizontal: 10,
+              paddingVertical: 10,
+              alignItems: "center",
+              justifyContent: "center",
+            })}
+          >
+            <Text
+              style={({ pressed }) => ({
+                textAlign: "center",
+                color: pressed ? "white" : "black",
+                paddingHorizontal: 20,
+                fontFamily: "bold",
+              })}
+            >
+              IN-TRANSIT
+            </Text>
+          </Pressable>
+        </View>
+      </ScrollView>
+
       <View style={{ marginTop: 20 }}>
         <Text>Reports from July 6, 2024 - July 14, 2024</Text>
       </View>
@@ -68,19 +207,23 @@ const ReportTables = () => {
 
       <View style={{ top: 15, bottom: 0 }}>
         <Pressable
+          onPress={() => {
+            router.push("/reports_export");
+          }}
           style={{
             alignContent: "center",
             backgroundColor: "#004EA3",
             borderRadius: 10,
+            height: 40,
           }}
         >
           <Text
             style={{
               textAlign: "center",
               color: "white",
-              fontSize: 16,
-              padding: 20,
-              fontFamily: "bold",
+              fontSize: 15,
+              padding: 10,
+              fontFamily: "medium",
             }}
           >
             EXPORT REPORTS
