@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 
 const DashboardLayout = () => {
   return (
-    <Stack>
+    <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="transitUnsuccessful" />
       <Stack.Screen name="transitDelivered" />
       <Stack.Screen name="transitIncoming" />

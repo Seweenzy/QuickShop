@@ -15,7 +15,6 @@ const Verification = () => {
           }}
         >
           Welcome to
-          {`\n`}
           <Text
             style={{
               color: "#FFC107",
