@@ -183,6 +183,9 @@ const Register = () => {
 
         <View style={{ marginTop: 40, height: 40 }}>
           <Pressable
+            onPress={() => {
+              router.push("/auth/forgotpassword");
+            }}
             style={{
               backgroundColor: "#004ea3",
               padding: 10,

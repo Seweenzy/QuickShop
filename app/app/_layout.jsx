@@ -13,7 +13,7 @@ const RootLayout = () => {
   console.log("loaded", loaded, "Is error", error);
 
   if (!loaded) {
-    return null; // Or return a loading component if you have one
+    return null;
   }
 
   return (

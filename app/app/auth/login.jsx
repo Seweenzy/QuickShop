@@ -130,7 +130,7 @@ const Login = () => {
         <View style={{ marginTop: 40, height: 40 }}>
           <Pressable
             onPress={() => {
-              router.push("/auth/verification");
+              router.push("././dashboard");
             }}
             style={{
               backgroundColor: "#004ea3",
