@@ -21,8 +21,9 @@ const RootLayout = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="auth"
+      initialRouteName="onboardScreen"
     >
+      <Stack.Screen name="onboardScreen" />
       <Stack.Screen name="auth" />
       <Stack.Screen name="(reports)" />
       <Stack.Screen name="(deliveries)" />
@@ -30,7 +31,6 @@ const RootLayout = () => {
 
       <Stack.Screen name="(dashboard)" />
       <Stack.Screen name="in-transit" />
-      <Stack.Screen name="index" />
     </Stack>
   );
 };

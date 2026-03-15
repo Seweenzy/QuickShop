@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
+    "name": "quickshop",
+    "slug": "quickshop",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -45,12 +45,12 @@
       "typedRoutes": true,
       "reactCompiler": true
     },
+    "owner": "seweenzy",
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "fde342d3-ec44-47c0-baad-dda1b4087abb"
+        "projectId": "48d234f5-523a-4dfe-9439-77a6f5dc042f"
       }
-    },
-    "owner": "seweenzy"
+    }
   }
 }

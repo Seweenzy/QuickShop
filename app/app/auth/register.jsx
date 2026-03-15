@@ -7,13 +7,42 @@ import {
   Keyboard,
   Pressable,
   Image,
+  Alert,
 } from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { router } from "expo-router";
+import { useState } from "react";
+import { supabase } from "../../lib/supabase";
 
 const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function signUpWithEmail() {
+    setLoading(true);
+    const { error } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+    });
+    setLoading(false);
+    if (error) {
+      Alert.alert("Registration Failed", error.message);
+      return;
+    }
+
+    Alert.alert(
+      "Registration Successful",
+      "Please check your email to verify your account, then log in.",
+      [{ text: "OK", onPress: () => router.push("/auth/login") }],
+    );
+  }
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView
@@ -65,6 +94,8 @@ const Register = () => {
             }}
             placeholder="First Name"
             placeholderTextColor="#B0B0B0"
+            value={firstName}
+            onChangeText={(text) => setFirstName(text)}
           />
           <TextInput
             style={{
@@ -79,6 +110,8 @@ const Register = () => {
             }}
             placeholder="Last Name"
             placeholderTextColor="#B0B0B0"
+            value={lastName}
+            onChangeText={(text) => setLastName(text)}
           />
         </View>
         <View style={{ marginTop: 40 }}>
@@ -103,6 +136,8 @@ const Register = () => {
           <TextInput
             placeholder="koluwaseunemmanuel@gmail.com"
             placeholderTextColor="#B0B0B0"
+            value={email}
+            onChangeText={(text) => setEmail(text)}
             style={{
               flex: 1,
               padding: 10,
@@ -136,6 +171,8 @@ const Register = () => {
             placeholder="Enter password"
             placeholderTextColor="#B0B0B0"
             secureTextEntry={true}
+            value={password}
+            onChangeText={(text) => setPassword(text)}
             style={{
               flex: 1,
               padding: 10,
@@ -170,6 +207,8 @@ const Register = () => {
             placeholder="Confirm password"
             placeholderTextColor="#B0B0B0"
             secureTextEntry={true}
+            value={confirmPassword}
+            onChangeText={(text) => setConfirmPassword(text)}
             style={{
               flex: 1,
               padding: 10,
@@ -183,9 +222,8 @@ const Register = () => {
 
         <View style={{ marginTop: 40, height: 40 }}>
           <Pressable
-            onPress={() => {
-              router.push("/auth/forgotpassword");
-            }}
+            onPress={signUpWithEmail}
+            disabled={loading}
             style={{
               backgroundColor: "#004ea3",
               padding: 10,

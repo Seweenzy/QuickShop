@@ -62,7 +62,7 @@ const OnboardScreen = () => {
           marginTop: 70,
         }}
         onPress={() => {
-          router.push("./dashboard");
+          router.push("././auth/login");
         }}
       >
         <Text

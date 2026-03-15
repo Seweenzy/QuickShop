@@ -6,14 +6,32 @@ import {
   Keyboard,
   Pressable,
   Image,
+  Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "@expo/vector-icons/Feather";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { router } from "expo-router";
+import { useState } from "react";
+import { supabase } from "../../lib/supabase";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function signInWithEmail() {
+    setLoading(true);
+    console.log({ email, password });
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
+    if (error) Alert.alert(error.message);
+    setLoading(false);
+  }
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView
@@ -65,6 +83,8 @@ const Login = () => {
           <TextInput
             placeholder="koluwaseunemmanuel@gmail.com"
             placeholderTextColor="#B0B0B0"
+            onChangeText={(e) => setEmail(e)}
+            value={email}
             style={{
               flex: 1,
               padding: 10,
@@ -98,6 +118,8 @@ const Login = () => {
             placeholder="Confirm new password"
             placeholderTextColor="#B0B0B0"
             secureTextEntry={true}
+            onChangeText={(e) => setPassword(e)}
+            value={password}
             style={{
               flex: 1,
               padding: 10,
@@ -129,9 +151,8 @@ const Login = () => {
 
         <View style={{ marginTop: 40, height: 40 }}>
           <Pressable
-            onPress={() => {
-              router.push("././dashboard");
-            }}
+            onPress={signInWithEmail}
+            disabled={loading}
             style={{
               backgroundColor: "#004ea3",
               padding: 10,
