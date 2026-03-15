@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "@expo/vector-icons/Feather";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { router } from "expo-router";
 import { useState } from "react";
@@ -20,6 +19,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   async function signInWithEmail() {
     setLoading(true);
@@ -28,7 +28,12 @@ const Login = () => {
       email: email,
       password: password,
     });
-    if (error) Alert.alert(error.message);
+    if (error) {
+      Alert.alert(error.message);
+    } else {
+      router.push("/(tabs)/dashboard");
+    }
+
     setLoading(false);
   }
 
@@ -83,7 +88,7 @@ const Login = () => {
           <TextInput
             placeholder="koluwaseunemmanuel@gmail.com"
             placeholderTextColor="#B0B0B0"
-            onChangeText={(e) => setEmail(e)}
+            onChangeText={(text) => setEmail(text)}
             value={email}
             style={{
               flex: 1,
@@ -117,7 +122,7 @@ const Login = () => {
           <TextInput
             placeholder="Confirm new password"
             placeholderTextColor="#B0B0B0"
-            secureTextEntry={true}
+            secureTextEntry={!showPassword}
             onChangeText={(e) => setPassword(e)}
             value={password}
             style={{
@@ -128,7 +133,13 @@ const Login = () => {
               fontSize: 14,
             }}
           />
-          <AntDesign name="eye-invisible" size={18} color="black" />
+          <Pressable onPress={() => setShowPassword(!showPassword)}>
+            <Feather
+              name={showPassword ? "eye" : "eye-off"}
+              size={18}
+              color="black"
+            />
+          </Pressable>
         </View>
 
         <Pressable
@@ -152,7 +163,6 @@ const Login = () => {
         <View style={{ marginTop: 40, height: 40 }}>
           <Pressable
             onPress={signInWithEmail}
-            disabled={loading}
             style={{
               backgroundColor: "#004ea3",
               padding: 10,

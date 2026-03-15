@@ -1,5 +1,5 @@
-import { Tabs } from "expo-router";
 import { Image } from "react-native";
+import { Tabs } from "expo-router";
 
 const TabsLayout = () => {
   return (

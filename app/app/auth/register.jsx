@@ -23,6 +23,8 @@ const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword1, setShowPassword1] = useState(false);
 
   async function signUpWithEmail() {
     setLoading(true);
@@ -170,7 +172,7 @@ const Register = () => {
           <TextInput
             placeholder="Enter password"
             placeholderTextColor="#B0B0B0"
-            secureTextEntry={true}
+            secureTextEntry={!showPassword}
             value={password}
             onChangeText={(text) => setPassword(text)}
             style={{
@@ -181,7 +183,13 @@ const Register = () => {
               fontSize: 14,
             }}
           />
-          <AntDesign name="eye-invisible" size={18} color="black" />
+          <Pressable onPress={() => setShowPassword(!showPassword)}>
+            <AntDesign
+              name={showPassword ? "eye-invisible" : "eye"}
+              size={18}
+              color="black"
+            />
+          </Pressable>
         </View>
         <View style={{ marginTop: 20 }}>
           <Text style={{ color: "black", fontFamily: "medium", fontSize: 14 }}>
@@ -206,7 +214,7 @@ const Register = () => {
           <TextInput
             placeholder="Confirm password"
             placeholderTextColor="#B0B0B0"
-            secureTextEntry={true}
+            secureTextEntry={!showPassword1}
             value={confirmPassword}
             onChangeText={(text) => setConfirmPassword(text)}
             style={{
@@ -217,7 +225,13 @@ const Register = () => {
               fontSize: 14,
             }}
           />
-          <AntDesign name="eye-invisible" size={18} color="black" />
+          <Pressable onPress={() => setShowPassword1(!showPassword1)}>
+            <AntDesign
+              name={showPassword1 ? "eye-invisible" : "eye"}
+              size={18}
+              color="black"
+            />
+          </Pressable>
         </View>
 
         <View style={{ marginTop: 40, height: 40 }}>
