@@ -1,6 +1,7 @@
 import QsafeView from "../../components/safeView";
 import Dash_comp from "../../components/dash_comp";
 import { View, ScrollView, Alert } from "react-native";
+import { router } from "expo-router";
 
 const TransitDelivered = () => {
   return (
@@ -25,8 +26,20 @@ const TransitDelivered = () => {
           press_1={"UNSUCCESSFUL"}
           press_2={"DELIVERED"}
           onPress2={() => {
-            Alert.alert("Delivery Successful", "This delivery was Successful.");
+            Alert.alert(
+              "Delivery Successful",
+              "This delivery was Successful.",
+              [
+                {
+                  Text: "OK",
+                  onPress: () => {
+                    router.push("/(tabs)/dashboard");
+                  },
+                },
+              ],
+            );
           }}
+          statusimg={require("../../assets/images/Statuscard.png")}
         />
 
         <View style={{ marginTop: 20 }}></View>
@@ -44,8 +57,20 @@ const TransitDelivered = () => {
           press_1={"UNSUCCESSFUL"}
           press_2={"DELIVERED"}
           onPress2={() => {
-            Alert.alert("Delivery Successful", "This delivery was Successful.");
+            Alert.alert(
+              "Delivery Successful",
+              "This delivery was Successful.",
+              [
+                {
+                  Text: "OK",
+                  onPress: () => {
+                    router.push("/(tabs)/dashboard");
+                  },
+                },
+              ],
+            );
           }}
+          statusimg={require("../../assets/images/Statuscard.png")}
         />
 
         <View style={{ marginTop: 20 }}></View>
@@ -69,8 +94,20 @@ const TransitDelivered = () => {
           press_1={"UNSUCCESSFUL"}
           press_2={"DELIVERED"}
           onPress2={() => {
-            Alert.alert("Delivery Successful", "This delivery was Successful.");
+            Alert.alert(
+              "Delivery Successful",
+              "This delivery was Successful.",
+              [
+                {
+                  Text: "OK",
+                  onPress: () => {
+                    router.push("/(tabs)/dashboard");
+                  },
+                },
+              ],
+            );
           }}
+          statusimg={require("../../assets/images/Statuscard.png")}
         />
       </ScrollView>
     </QsafeView>

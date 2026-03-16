@@ -95,7 +95,7 @@ const IncomingAcceptConfirmation = () => {
                 {
                   text: "OK",
                   onPress: () => {
-                    router.push("./deliveries");
+                    router.push("./(deliveries)");
                   },
                 },
               ],

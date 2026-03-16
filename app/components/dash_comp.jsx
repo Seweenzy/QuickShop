@@ -1,5 +1,6 @@
 import QsafeView from "./safeView";
 import { Image, StyleSheet, View, Text, Pressable } from "react-native";
+import { useState } from "react";
 
 const Dash_comp = ({
   image,
@@ -26,6 +27,8 @@ const Dash_comp = ({
   onPress2,
   statusimg,
 }) => {
+  const [activeTab, setActiveTab] = useState();
+
   return (
     <QsafeView>
       <View>
@@ -55,20 +58,51 @@ const Dash_comp = ({
           marginRight: 10,
         }}
       >
-        {in_trans && (
-          <Text style={{ fontFamily: "bold", color: "#004EA3", fontSize: 16 }}>
+        <Pressable
+          onPress={() => setActiveTab("in_trans")}
+          style={[
+            {
+              borderBottomWidth: activeTab === "in_trans" ? 1 : 0, // Active = thick
+              borderBottomColor: activeTab === "in_trans" ? "#004EA3" : "#ccc",
+            },
+          ]}
+        >
+          <Text
+            style={[
+              { fontFamily: "bold", fontSize: 16 },
+              activeTab === "in_trans"
+                ? { color: "#004EA3" }
+                : { color: "gray" },
+            ]}
+          >
             {in_trans}
           </Text>
-        )}
+        </Pressable>
 
         <View style={{ flexDirection: "row" }}>
-          {in_coms && (
+          <Pressable
+            onPress={() => setActiveTab("in_coms")}
+            style={[
+              {
+                borderBottomWidth: activeTab === "in_coms" ? 1 : 0, // Active = thick
+                borderBottomColor: activeTab === "in_coms" ? "#004EA3" : "#ccc",
+              },
+            ]}
+          >
             <Text
-              style={{ fontFamily: "light", color: "#7A8189", fontSize: 16 }}
+              style={[
+                {
+                  fontFamily: "bold",
+                  fontSize: 16,
+                },
+                activeTab === "in_coms"
+                  ? { color: "#004EA3" }
+                  : { color: "gray" },
+              ]}
             >
               {in_coms}
             </Text>
-          )}
+          </Pressable>
         </View>
       </View>
       <View
@@ -77,7 +111,7 @@ const Dash_comp = ({
           borderRadius: 10,
           borderColor: "#ccc",
           borderWidth: 0.9,
-          marginTop: 0,
+
           backgroundColor: "white",
           padding: 10,
         }}
