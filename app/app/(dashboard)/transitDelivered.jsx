@@ -37,6 +37,7 @@ const TransitDelivered = () => {
                   },
                 },
               ],
+              { cancelable: true },
             );
           }}
           statusimg={require("../../assets/images/Statuscard.png")}
@@ -68,6 +69,7 @@ const TransitDelivered = () => {
                   },
                 },
               ],
+              { cancelable: true },
             );
           }}
           statusimg={require("../../assets/images/Statuscard.png")}
@@ -105,6 +107,7 @@ const TransitDelivered = () => {
                   },
                 },
               ],
+              { cancelable: true },
             );
           }}
           statusimg={require("../../assets/images/Statuscard.png")}

@@ -1,11 +1,39 @@
-import { View, Text, Image, Pressable, ScrollView } from "react-native";
+import { View, Text, Image, Pressable, ScrollView, Alert } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Feather from "@expo/vector-icons/Feather";
 import { router } from "expo-router";
 import QsafeView from "../../../components/safeView";
+import { supabase } from "../../../lib/supabase";
 
 const Profile = () => {
+  const handleLogout = async () => {
+    Alert.alert(
+      "Logout Confirmation",
+      "Are you sure you want to log out?",
+      [
+        {
+          text: "Cancel",
+        },
+        {
+          text: "Logout",
+
+          onPress: async () => {
+            const { error } = await supabase.auth.signOut();
+            if (error) {
+              Alert.alert("Error", `Logout failed: ${error.message}`);
+            } else {
+              router.push("/auth/login");
+              // Navigate to login or reset state
+              console.log("Logged out successfully");
+            }
+          },
+        },
+      ],
+      { cancelable: true }, // Allow outside tap to cancel
+    );
+  };
+
   return (
     <ScrollView>
       <QsafeView>
@@ -248,6 +276,7 @@ const Profile = () => {
         </View>
 
         <Pressable
+          onPress={handleLogout}
           style={{
             backgroundColor: "#004ea3",
             padding: 10,

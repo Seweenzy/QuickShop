@@ -38,6 +38,7 @@ const IncomingAccept = () => {
                   },
                 },
               ],
+              { cancelable: true },
             );
           }}
           statusimg={require("../../assets/images/Statuscard2.png")}
@@ -70,6 +71,7 @@ const IncomingAccept = () => {
                   },
                 },
               ],
+              { cancelable: true },
             );
           }}
           statusimg={require("../../assets/images/Statuscard2.png")}
@@ -102,6 +104,7 @@ const IncomingAccept = () => {
                   },
                 },
               ],
+              { cancelable: true },
             );
           }}
           statusimg={require("../../assets/images/Statuscard2.png")}

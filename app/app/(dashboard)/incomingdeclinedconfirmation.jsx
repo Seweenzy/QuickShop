@@ -37,6 +37,7 @@ const IncomingDeclinedConfirmation = () => {
                   },
                 },
               ],
+              { cancelable: true },
             );
           }}
           onPress2={() => {
@@ -64,6 +65,7 @@ const IncomingDeclinedConfirmation = () => {
               " Delivery Declined",
               "You have declined delivery. This delivery will be removed from your list",
               [{ text: "OK", onPress: () => console.log("YES Pressed") }],
+              { cancelable: true },
             );
           }}
           statusimg={require("../../assets/images/Statuscard2.png")}
@@ -88,6 +90,7 @@ const IncomingDeclinedConfirmation = () => {
               " Delivery Declined",
               "You have declined delivery. This delivery will be removed from your list",
               [{ text: "OK", onPress: () => console.log("YES Pressed") }],
+              { cancelable: true },
             );
           }}
           statusimg={require("../../assets/images/Statuscard2.png")}
