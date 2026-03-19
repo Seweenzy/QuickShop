@@ -28,7 +28,7 @@ const ChangePhone = () => {
           You can change your phone number here to keep your account secure.
         </Text>
         <View style={{ marginTop: 20 }}>
-          <Text>New Phone Number</Text>
+          <Text>Current Phone Number</Text>
 
           <View
             style={{
@@ -43,22 +43,21 @@ const ChangePhone = () => {
           >
             <Feather name="phone" size={24} color="#004EA3" />
             <TextInput
-              placeholder="Enter new phone number"
+              placeholder="9008764747"
               secureTextEntry={true}
               style={{
                 flex: 1,
                 padding: 10,
                 marginLeft: 10,
                 fontSize: 16,
-                fontWeight: "bold",
+                fontWeight: "normal",
               }}
             />
-            <AntDesign name="eye-invisible" size={18} color="black" />
           </View>
         </View>
 
         <View style={{ marginTop: 20 }}>
-          <Text>Confirm New Password:</Text>
+          <Text>New Phone Number:</Text>
         </View>
 
         <View
@@ -73,19 +72,18 @@ const ChangePhone = () => {
             gap: 10,
           }}
         >
-          <Feather name="lock" size={24} color="#004EA3" />
+          <Feather name="phone" size={24} color="#004EA3" />
           <TextInput
-            placeholder="Confirm new password"
+            placeholder="9008764747"
             secureTextEntry={true}
             style={{
               flex: 1,
               padding: 10,
               color: "black",
-              fontWeight: "bold",
+              fontWeight: "normal",
               fontSize: 16,
             }}
           />
-          <AntDesign name="eye-invisible" size={18} color="black" />
         </View>
       </View>
 

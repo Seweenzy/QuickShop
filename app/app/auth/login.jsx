@@ -90,6 +90,7 @@ const Login = () => {
             placeholderTextColor="#B0B0B0"
             onChangeText={(text) => setEmail(text)}
             value={email}
+            keyboardType="email-address"
             style={{
               flex: 1,
               padding: 10,

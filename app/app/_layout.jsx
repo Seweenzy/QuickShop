@@ -31,6 +31,7 @@ const RootLayout = () => {
 
       <Stack.Screen name="(dashboard)" />
       <Stack.Screen name="in-transit" />
+      <Stack.Screen name="index" />
     </Stack>
   );
 };
