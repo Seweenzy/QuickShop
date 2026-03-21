@@ -122,7 +122,9 @@ const Login = () => {
               style={{
                 color: "Red",
               }}
-            ></Text>
+            >
+              Enter a valid email address
+            </Text>
           ) : null}
         </View>
 
