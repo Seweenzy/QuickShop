@@ -14,12 +14,22 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { router } from "expo-router";
 import { useState } from "react";
 import { supabase } from "../../lib/supabase";
+import Icon from "@expo/vector-icons/FontAwesome";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [touched, setTouched] = useState(false);
+
+  const isValidEmail = (value) => {
+    // Basic email regex
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(value);
+  };
+
+  const isEmailValid = touched && email && isValidEmail(email);
 
   async function signInWithEmail() {
     setLoading(true);
@@ -91,6 +101,7 @@ const Login = () => {
             onChangeText={(text) => setEmail(text)}
             value={email}
             keyboardType="email-address"
+            onBlur={() => setTouched(true)}
             style={{
               flex: 1,
               padding: 10,
@@ -98,6 +109,21 @@ const Login = () => {
               fontWeight: "500",
             }}
           />
+
+          {touched && (
+            <Icon
+              name={isEmailValid ? "check-circle" : "close-circle"}
+              size={20}
+              color={isEmailValid ? "green" : "red"}
+            />
+          )}
+          {touched && !isEmailValid && email ? (
+            <Text
+              style={{
+                color: "Red",
+              }}
+            ></Text>
+          ) : null}
         </View>
 
         <View style={{ marginTop: 20 }}>

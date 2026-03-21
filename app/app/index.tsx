@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 export default function Index() {
   useEffect(() => {
-    router.replace("/onboardScreen"); // Navigate to your onboarding
+    router.replace("/onboardScreen");
   }, []);
   return null;
 }
