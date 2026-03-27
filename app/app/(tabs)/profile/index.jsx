@@ -24,13 +24,13 @@ const Profile = () => {
               Alert.alert("Error", `Logout failed: ${error.message}`);
             } else {
               router.push("/auth/login");
-              // Navigate to login or reset state
+
               console.log("Logged out successfully");
             }
           },
         },
       ],
-      { cancelable: true }, // Allow outside tap to cancel
+      { cancelable: true },
     );
   };
 
