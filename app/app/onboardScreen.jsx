@@ -64,6 +64,8 @@ const OnboardScreen = () => {
         onPress={() => {
           router.push("././auth/login");
         }}
+
+        
       >
         <Text
           style={{
