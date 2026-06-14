@@ -152,7 +152,7 @@ const Login = () => {
             placeholder="Confirm new password"
             placeholderTextColor="#B0B0B0"
             secureTextEntry={!showPassword}
-            onChangeText={(e) => setPassword(e)}
+            onChangeText={(text) => setPassword(text)}
             value={password}
             style={{
               flex: 1,
