@@ -1,0 +1,1 @@
+This is a logistic app UI interface that allows user to track successful and unsuccessful orders, users can create profile, chat with a customer service representative and they also have options to cancel orders. Easy login and signup pages and authentication is made easy too.
