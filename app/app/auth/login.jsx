@@ -6,14 +6,13 @@ import {
   Keyboard,
   Pressable,
   Image,
-  Alert,
+
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "@expo/vector-icons/Feather";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { router } from "expo-router";
 import { useState } from "react";
-import { supabase } from "../../lib/supabase";
+
 import Icon from "@expo/vector-icons/FontAwesome";
 
 const Login = () => {
@@ -31,21 +30,7 @@ const Login = () => {
 
   const isEmailValid = touched && email && isValidEmail(email);
 
-  async function signInWithEmail() {
-    setLoading(true);
-    console.log({ email, password });
-    const { error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
-    });
-    if (error) {
-      Alert.alert(error.message);
-    } else {
-      router.push("/(tabs)/dashboard");
-    }
 
-    setLoading(false);
-  }
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -94,7 +79,7 @@ const Login = () => {
             backgroundColor: "white",
           }}
         >
-          <FontAwesome name="envelope-o" size={18} color="black" />
+          <Feather name="mail" size={18} color="black" />
           <TextInput
             placeholder="koluwaseunemmanuel@gmail.com"
             placeholderTextColor="#B0B0B0"
@@ -191,7 +176,7 @@ const Login = () => {
 
         <View style={{ marginTop: 40, height: 40 }}>
           <Pressable
-            onPress={signInWithEmail}
+            onPress={() => router.push("/(tabs)/dashboard")}
             style={{
               backgroundColor: "#004ea3",
               padding: 10,

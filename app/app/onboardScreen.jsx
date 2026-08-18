@@ -1,5 +1,5 @@
 import QsafeView from "../components/safeView";
-import { Text, View, Image, Pressable } from "react-native";
+import { Text, View, Image, Pressable} from "react-native";
 import { router } from "expo-router";
 
 const OnboardScreen = () => {
@@ -12,6 +12,7 @@ const OnboardScreen = () => {
             color: "#004EA3",
             fontSize: 40,
             lineHeight: 48,
+            paddingHorizontal:10
           }}
         >
           Streamline {`\n`}your deliveries!
@@ -25,6 +26,7 @@ const OnboardScreen = () => {
             color: "#000",
             fontSize: 14,
             lineHeight: 20,
+            paddingHorizontal:10
           }}
         >
           Easily manage and track your delivery tasks, optimize routes, and get
